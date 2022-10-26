@@ -1,0 +1,14 @@
+services:
+  gpu-visor-app:
+    build: .
+    container_name: gpu-visor-app
+    command: npm run dev
+    image: gpu-visor/prod
+    volumes:
+      - .:/app
+    ports:
+      - 3333:3333
+    environment:
+      - PORT=3333
+      - NOTION_ACCESS_TOKEN=secret_VczGKBakWvxGZzJwXvlBNpQ85Hb2jsnXiydPcq8Pjkv
+      - NOTION_DATABASE_ID=a026be8fd1b242668e5ceaabff2106ec
